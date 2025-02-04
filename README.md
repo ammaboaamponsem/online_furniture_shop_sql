@@ -1,2 +1,6 @@
-# online_furniture_shop_sql
-Online Furniture Shop (SQL)
+# Online Furniture Shop Database (SQL)
+
+In this detailed report, we will include the Problem Statement, Solution, Business analysis, and solution Architecture using diverse visualizations for clarity and comprehension.
+Furniture shopping, influenced by various factors such as budget considerations, standard type, material, quality, and sizes can be complex and overwhelming at times. Users find it challenging to get the perfect furniture for their homes, event decors and offices to name a few. To deliver a community-friendly solution, our team has developed an online marketing platform which offers users to: buy and sell their second-hand furniture; review or share their good and bad experiences on furniture products they purchase; assist in making well-informed decisions on furniture choices and provide insights on the supply and demand of certain furniture products for manufacturers and interior designers.
+
+With this user-friendly website, a wide range of database on user profiles, furniture listings, categories, and images as well as a vigorous rating and review mechanism will be obtained. We simply aim to improve the furniture shopping process and provide adequate resources for furniture enthusiasts.
