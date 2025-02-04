@@ -1,0 +1,52 @@
+SELECT furniture_product.furniture_id, furniture_product.furniture_name, distributor.distributor_id, distributor.distributor_name, review.durabilty
+FROM furniture_product
+JOIN distributor
+ON furniture_product.distributor_id = distributor.distributor_id
+JOIN review
+ON furniture_product.furniture_id = review.furniture_id
+WHERE review.durabilty &gt; 4;
+
+SELECT furniture_product.furniture_name, furniture_product.price, department.department_id, department.department_name, review.accessibilty
+FROM furniture_product
+JOIN department
+ON furniture_product.department_id = department.department_id
+JOIN review
+ON furniture_product.furniture_id = review.furniture_id
+WHERE furniture_product.price &gt;= 20 AND furniture_product.price &lt;= 50 
+AND department.department_name = &quot;Living room&quot; AND review.accessibilty &lt;= 3;
+
+SELECT review.accessibilty, review.durabilty, review.price, review.quality, review.style, user.user_id, user.user_name, furniture_product.furniture_name
+FROM review
+JOIN furniture_product
+ON review.furniture_id = furniture_product.furniture_id
+JOIN user
+ON review.user_id = user.user_id
+WHERE review.accessibilty &lt; 4 AND review.durabilty &lt; 4 AND review.price &lt; 4 AND review.quality &lt; 4 AND review.style &lt; 4;</sql><sql name="SQL 4">Find the number of users who bought our furniture products in 2015
+
+SELECT COUNT(*)
+FROM [order]
+WHERE [order].order_date LIKE '%2015';</sql><sql name="SQL 5">Find the price of a furniture product which a user was not satisfied about and gave 2-star ratings on price 
+
+SELECT furniture_product.furniture_name, furniture_product.price, user.user_id, user.user_name, review.price
+FROM review
+JOIN furniture_product
+ON review.furniture_id = furniture_product.furniture_id
+JOIN user
+ON review.user_id = user.user_id
+WHERE review.price = 2;
+
+SELECT user.user_id, user.user_name, user.city, [order].cost, [order].delivery_name, furniture_product.furniture_name
+FROM [order]
+JOIN user
+ON [order].user_id = user.user_id
+JOIN furniture_product
+ON [order].furniture_id = furniture_product.furniture_id
+WHERE user.city = 'Boston';
+
+SELECT user.user_id, user.user_name, review.comment, review.comment_date, furniture_product.furniture_name
+FROM review
+JOIN user
+ON review.user_id = user.user_id
+JOIN furniture_product
+ON review.furniture_id = furniture_product.furniture_id
+WHERE review.comment LIKE '%good%';
